@@ -7,6 +7,6 @@ export class EnvService {
   URL: string;
 
   constructor() {
-    this.URL = 'http://localhost:8000/api/';
+    this.URL = 'http://desafio-br24-api.herokuapp.com/api/';
   }
 }

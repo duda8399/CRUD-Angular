@@ -12,23 +12,23 @@ export class CompaniesService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization:
+      /*Authorization:
         localStorage.getItem('token_type') +
         ' ' +
-        localStorage.getItem('access_token'),
+        localStorage.getItem('access_token'),*/
     }),
   };
 
   constructor(private http: HttpClient, private envService: EnvService) {}
 
-  public getCompanies(): Observable<any[]> {
+  public getCompanies(): Observable<Company[]> {
     return this.http
-      .get<any[]>(this.envService.URL + 'companies/', this.httpOptions)
+      .get<Company[]>(this.envService.URL + 'companies', this.httpOptions)
       .pipe((data) => data);
   }
 
-  public show(id: number): Observable<any> {
-    return this.http.get<any>(
+  public show(id: number): Observable<Company> {
+    return this.http.get<Company>(
       this.envService.URL + 'companies/' + id + '/edit',
       this.httpOptions
     );
