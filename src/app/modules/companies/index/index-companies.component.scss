@@ -1,0 +1,41 @@
+.title {
+    position: absolute;
+    font-weight: bold;
+}
+.card-header {
+    padding: 6px 10px !important;
+}
+.nav-icon {
+    font-size: 12pt !important;
+}
+.buttons {
+    float: right;
+}
+table {
+    width: 100% !important;
+    font-size: 11pt;
+}
+th,td{
+    white-space: nowrap;
+}
+.modal-title {
+    font-size: 12pt;
+}
+.btn-outline-secondary {
+    border-color: #2f353b;
+    color: #2f353b;
+    font-size: 10pt;
+    font-weight: bold;
+}
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #2f353b;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

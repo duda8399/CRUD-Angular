@@ -1,0 +1,51 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a class="col-12 brand-link">
+        <span class="brand-text font-weight-light ml-2">BR24</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar GERAL-->
+        <nav>
+            <h6 class="text-white mt-2 ml-2">MENU</h6>
+            <ul class="
+            nav nav-pills nav-sidebar
+            text-sm text-wrap
+            nav-child-indent nav-legacy nav-collapse-hide-child
+            flex-column
+          " data-widget="treeview" role="menu" data-accordion="false">
+
+                <!--INFORMAÇÕES-->
+                <div class="nav-item">
+                    <a class="nav-link">
+                        <i class="fas fa-building nav-icon"></i>
+                        <p>
+                            Empresas
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="'/'">
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Listar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="'/create'">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Cadastrar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

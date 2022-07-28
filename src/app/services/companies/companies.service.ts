@@ -1,0 +1,62 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { EnvService } from '../env/env.service';
+import { Company } from 'src/app/models/company';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class CompaniesService {
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization:
+        localStorage.getItem('token_type') +
+        ' ' +
+        localStorage.getItem('access_token'),
+    }),
+  };
+
+  constructor(private http: HttpClient, private envService: EnvService) {}
+
+  public getCompanies(): Observable<any[]> {
+    return this.http
+      .get<any[]>(this.envService.URL + 'companies/', this.httpOptions)
+      .pipe((data) => data);
+  }
+
+  public show(id: number): Observable<any> {
+    return this.http.get<any>(
+      this.envService.URL + 'companies/' + id + '/edit',
+      this.httpOptions
+    );
+  }
+
+  public create(company: Company): Observable<number> {
+    return this.http
+      .post(
+        this.envService.URL + 'companies/',
+        JSON.stringify(company),
+        this.httpOptions
+      )
+      .pipe(map((data: any) => data));
+  }
+
+  public update(company: Company): Observable<number> {
+    return this.http
+      .put(
+        this.envService.URL + 'companies/' + company.id,
+        JSON.stringify(company),
+        this.httpOptions
+      )
+      .pipe(map((data: any) => data));
+  }
+
+  public delete(id: number) {
+    return this.http
+      .delete(this.envService.URL + 'companies/' + id, this.httpOptions)
+      .pipe(map((data: any) => data));
+  }
+}
