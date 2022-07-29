@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     CommonModule,
     CompaniesRoutingModule,
     LayoutModule,
+    ComponentsModule,
     DataTablesModule,
     RouterModule,
     FormsModule,

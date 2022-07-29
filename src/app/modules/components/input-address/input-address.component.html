@@ -1,0 +1,15 @@
+<div class="form-group" [ngClass]="classCss">
+    <label for="location">
+        {{ label }}
+        <span *ngIf="control != undefined && control.validator != null">
+            <i class="fas fa-asterisk"></i>
+        </span>
+    </label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="value" [disabled]="disabled" [placeholder]="placeholder"
+            id="location">
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="form-group" [ngClass]="classCss">
+    <label for="email">
+        {{ label }}
+        <span *ngIf="control != undefined && control.validator != null">
+            <i class="fas fa-asterisk"></i>
+        </span>
+    </label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="value" placeholder="E-mail" id="email">
+    </div>
+</div>

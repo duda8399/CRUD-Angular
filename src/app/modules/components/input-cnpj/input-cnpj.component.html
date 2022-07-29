@@ -1,0 +1,17 @@
+<div class="form-group" [ngClass]="classCss">
+    <label for="cnpj">
+        {{ label }}
+        <span *ngIf="control != undefined && control.validator != null">
+            <i class="fas fa-asterisk"></i>
+        </span>
+    </label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+        </div>
+        <input mask="00.000.000/0000-00" type="text" class="form-control" 
+            [(ngModel)]="value"
+            [disabled]="disabled"
+            [placeholder]="placeholder" id="cnpj">
+    </div>
+</div>

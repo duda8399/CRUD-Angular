@@ -12,10 +12,6 @@ export class CompaniesService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      /*Authorization:
-        localStorage.getItem('token_type') +
-        ' ' +
-        localStorage.getItem('access_token'),*/
     }),
   };
 
@@ -35,9 +31,10 @@ export class CompaniesService {
   }
 
   public create(company: Company): Observable<number> {
+    console.log('create ', JSON.stringify(company));
     return this.http
       .post(
-        this.envService.URL + 'companies/',
+        this.envService.URL + 'companies s/',
         JSON.stringify(company),
         this.httpOptions
       )
