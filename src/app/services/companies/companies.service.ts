@@ -31,10 +31,9 @@ export class CompaniesService {
   }
 
   public create(company: Company): Observable<number> {
-    console.log('create ', JSON.stringify(company));
     return this.http
       .post(
-        this.envService.URL + 'companies s/',
+        this.envService.URL + 'companies',
         JSON.stringify(company),
         this.httpOptions
       )

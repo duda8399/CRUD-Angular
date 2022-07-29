@@ -86,11 +86,11 @@ export class IndexCompaniesComponent implements OnInit {
     this.companiesService.getCompanies().subscribe(
       (data: Company[]) => {
         this.companies = data;
-        this.dtTrigger.next();
+        this.rerender();
         this.spinner.hide();
       },
       (erro) => {
-        this.dtTrigger.next();
+        this.rerender();
         this.spinner.hide();
         this.msg =
           'Ocorreu um erro inesperado. Favor tente novamente mais tarde.';
@@ -120,7 +120,7 @@ export class IndexCompaniesComponent implements OnInit {
           this.type = data.type;
           
           this.onClose();
-          this.rerender();
+          this.getCompanies();
         },
         error => { console.log('error ', error); },
         () => {}
@@ -128,9 +128,13 @@ export class IndexCompaniesComponent implements OnInit {
   }
 
   rerender(): void {
-    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-      dtInstance.destroy();
+    if(this.dtElement.dtInstance != undefined) {
+      this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+        dtInstance.destroy();
+        this.dtTrigger.next();
+      });
+    } else {
       this.dtTrigger.next();
-    });
+    }
   }
 }
