@@ -55,7 +55,7 @@ export class IndexCompaniesComponent implements OnInit {
           text: '<i class="far fa-file-excel mr-2"></i>Excel',
           className: 'btn-sm btn-secondary',
           exportOptions: {
-            columns: [0, 2],
+            columns: [0, 2, 3, 4],
           },
         },
         {
@@ -63,7 +63,7 @@ export class IndexCompaniesComponent implements OnInit {
           text: '<i class="fas fa-print mr-2"></i>Imprimir',
           className: 'btn-sm btn-secondary',
           exportOptions: {
-            columns: [0, 2],
+            columns: [0, 2, 3, 4],
           },
         },
       ],

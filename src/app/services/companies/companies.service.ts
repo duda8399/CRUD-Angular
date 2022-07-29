@@ -41,6 +41,7 @@ export class CompaniesService {
   }
 
   public update(company: Company): Observable<number> {
+    console.log('uppdate ', JSON.stringify(company));
     return this.http
       .put(
         this.envService.URL + 'companies/' + company.id,
