@@ -29,7 +29,7 @@ export class CreateCompaniesComponent implements OnInit {
       social_name: new FormControl(null, [Validators.required]),
       cnpj: new FormControl(null, [Validators.required]),
       address: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       contacts: this.formBuilder.array([this.initActionFields()]),
     });
   }
@@ -37,9 +37,9 @@ export class CreateCompaniesComponent implements OnInit {
   initActionFields(): FormGroup {
     this.count += 1;
     return this.formBuilder.group({
-      name: new FormControl(null, []),
-      last_name: new FormControl(null, []),
-      phone: new FormControl(null, []),
+      name: new FormControl(null, [Validators.required]),
+      last_name: new FormControl(null, [Validators.required]),
+      phone: new FormControl(null, [Validators.required]),
       email: new FormControl(null, []),
     });
   }
@@ -88,6 +88,7 @@ export class CreateCompaniesComponent implements OnInit {
         }
       );
     } else {
+      window.scrollTo(0, 0);
       this.msg = 'Existem campos obrigatórios que não foram preenchidos.';
       this.type = 'error';
       this.form.get('social_name').markAsTouched();
@@ -100,7 +101,7 @@ export class CreateCompaniesComponent implements OnInit {
   clearFields() {
     this.form.get('social_name').setValue(null);
     this.form.get('cnpj').setValue(null);
-    this.form.get('address').setValue('0');
+    this.form.get('address').setValue(null);
     this.form.get('email').setValue(null);
 
     const arrayControl = <FormArray>this.form.controls['contacts'];

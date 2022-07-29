@@ -20,6 +20,7 @@ export class InputNameComponent implements ControlValueAccessor {
   @Input() classCss;
   @Input() control;
   @Input() disabled;
+  @Input() required = false
 
   onChange: any = () => {};
   onTouch: any = () => {};

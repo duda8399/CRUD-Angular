@@ -50,12 +50,12 @@
                                     *ngFor="let item of form.get('contacts')['controls']; let i = index;">
                                     <div class="row" [formGroupName]="i">
                                         <div class="col-md-6 col-sm-12">
-                                            <app-input-name formControlName="name"></app-input-name>
+                                            <app-input-name formControlName="name" [required]="true"></app-input-name>
                                         </div>
 
                                         <div class="col-md-6 col-sm-12">
                                             <app-input-name formControlName="last_name" label="Sobrenome"
-                                                placeholder="Digite o sobrenome"></app-input-name>
+                                                placeholder="Digite o sobrenome" [required]="true"></app-input-name>
                                         </div>
 
                                         <div class="col-md-6 col-sm-12">
@@ -63,7 +63,7 @@
                                         </div>
 
                                         <div class="col-md-6 col-sm-12">
-                                            <app-input-phone formControlName="phone"></app-input-phone>
+                                            <app-input-phone formControlName="phone" [required]="true"></app-input-phone>
                                         </div>
 
                                     </div>

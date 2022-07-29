@@ -19,6 +19,7 @@ export class InputEmailComponent implements ControlValueAccessor {
   @Input() placeholder = 'Digite o e-mail';
   @Input() control;
   @Input() classCss;
+  @Input() required = false;
 
   onChange: any = () => {};
   onTouch: any = () => {};

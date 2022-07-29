@@ -88,9 +88,9 @@ export class EditCompaniesComponent implements OnInit {
   initActionFields(): FormGroup {
     return this.formBuilder.group({
       id: new FormControl(null, []),
-      name: new FormControl(null, []),
-      last_name: new FormControl(null, []),
-      phone: new FormControl(null, []),
+      name: new FormControl(null, [Validators.required]),
+      last_name: new FormControl(null, [Validators.required]),
+      phone: new FormControl(null, [Validators.required]),
       email: new FormControl(null, []),
     });
   }
@@ -144,6 +144,7 @@ export class EditCompaniesComponent implements OnInit {
         }
       );
     } else {
+      window.scrollTo(0, 0);
       this.msg = 'Existem campos obrigatórios que não foram preenchidos.';
       this.type = 'error';
       this.form.get('social_name').markAsTouched();

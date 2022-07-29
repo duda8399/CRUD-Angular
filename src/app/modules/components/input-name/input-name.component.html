@@ -1,7 +1,7 @@
 <div class="form-group" [ngClass]="classCss">
     <label for="name">
         {{ label }}
-        <span *ngIf="control != undefined && control.validator != null">
+        <span *ngIf="(control != undefined && control.validator != null) || required == true">
             <i class="fas fa-asterisk"></i>
         </span>
     </label>
