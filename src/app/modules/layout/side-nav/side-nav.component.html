@@ -1,13 +1,19 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a class="col-12 brand-link">
+    <a [routerLink]="'/'" class="col-12 brand-link text-center">
         <span class="brand-text font-weight-light ml-2">BR24</span>
     </a>
 
-    <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar GERAL-->
+        <div class="user-panel pt-3">
+            <div class="pull-left">
+                <i class="fas fa-user-circle d-flex justify-content-center"></i>
+            </div>
+            <div class="pull-left">
+                <p class="brand-text text-white pt-2 d-flex justify-content-center">Alexander Pierce</p>
+            </div>
+        </div>
+
         <nav>
             <h6 class="text-white mt-2 ml-2">MENU</h6>
             <ul class="
@@ -17,7 +23,6 @@
             flex-column
           " data-widget="treeview" role="menu" data-accordion="false">
 
-                <!--INFORMAÇÕES-->
                 <div class="nav-item">
                     <a class="nav-link">
                         <i class="fas fa-building nav-icon"></i>
@@ -44,8 +49,5 @@
                 </div>
             </ul>
         </nav>
-
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>

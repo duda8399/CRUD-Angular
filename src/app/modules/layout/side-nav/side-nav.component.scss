@@ -1,0 +1,44 @@
+*, ::after, ::before {
+    box-sizing: border-box !important;
+}
+.brand-text {
+    font-family: 'Archivo Black', sans-serif;
+}
+.brand-link {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.nav-item {
+    cursor: pointer;
+}
+
+a.nav-link p {
+    font-size: 11pt;
+}
+.active {
+    color: #fff !important;
+    font-weight: bold;
+}
+.nav-icon {
+    font-size: 12pt !important;
+}
+.icon-company {
+    font-size: 7pt;
+    margin-top: -2px;
+}
+.user-panel {
+    padding: 5px;
+    margin: 0px;
+}
+.fa-user-circle {
+    color: #fff;
+    font-size: 45pt;
+    align-items: center;
+}
+.break{
+    display: block;
+}
+p {
+    font-size: 12pt;
+    font-family: sans-serif !important;
+}
